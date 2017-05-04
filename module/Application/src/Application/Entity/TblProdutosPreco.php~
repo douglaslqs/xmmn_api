@@ -1,0 +1,68 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblProdutosPreco
+ *
+ * @ORM\Table(name="tbl_produtos_preco")
+ * @ORM\Entity
+ */
+class TblProdutosPreco
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idproduto", type="integer", nullable=true)
+     */
+    private $idproduto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tipoconsultor", type="integer", nullable=true)
+     */
+    private $tipoconsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="precocompra", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $precocompra;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="precovenda", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $precovenda;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $ponto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="preco_bonus", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $precoBonus;
+
+
+}
+

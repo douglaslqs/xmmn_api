@@ -1,0 +1,103 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblGraduados
+ *
+ * @ORM\Table(name="tbl_graduados", indexes={@ORM\Index(name="in_id_consultor", columns={"id_consultor"}), @ORM\Index(name="in_login_consultor", columns={"login_consultor"})})
+ * @ORM\Entity
+ */
+class TblGraduados
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="patamar", type="string", length=200, nullable=true)
+     */
+    private $patamar;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ultima_atualizacao", type="datetime", nullable=true)
+     */
+    private $ultimaAtualizacao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_bronzes", type="integer", nullable=true)
+     */
+    private $quantidadeBronzes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_diamante", type="integer", nullable=true)
+     */
+    private $quantidadeDiamante;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_duplo_diamante", type="integer", nullable=true)
+     */
+    private $quantidadeDuploDiamante;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login_consultor", type="string", length=255, nullable=true)
+     */
+    private $loginConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_totais", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontosTotais;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="linhas_bronze", type="integer", nullable=true)
+     */
+    private $linhasBronze;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="linhas_diamante", type="integer", nullable=true)
+     */
+    private $linhasDiamante;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="linhas_duplo_diamante", type="integer", nullable=true)
+     */
+    private $linhasDuploDiamante;
+
+
+}
+

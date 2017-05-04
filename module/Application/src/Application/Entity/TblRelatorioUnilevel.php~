@@ -1,0 +1,68 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblRelatorioUnilevel
+ *
+ * @ORM\Table(name="tbl_relatorio_unilevel")
+ * @ORM\Entity
+ */
+class TblRelatorioUnilevel
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto_pessoal", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontoPessoal;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto_adesao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontoAdesao;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto_ativacao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontoAtivacao;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_total", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $valorTotal;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=true)
+     */
+    private $data;
+
+
+}
+

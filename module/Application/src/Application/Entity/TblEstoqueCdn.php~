@@ -1,0 +1,82 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblEstoqueCdn
+ *
+ * @ORM\Table(name="tbl_estoque_cdn")
+ * @ORM\Entity
+ */
+class TblEstoqueCdn
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto", type="integer", nullable=true)
+     */
+    private $idProduto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="estoque", type="integer", nullable=true)
+     */
+    private $estoque;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo", type="integer", nullable=true)
+     */
+    private $ativo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="destaque", type="integer", nullable=true)
+     */
+    private $destaque;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mais_vendido", type="integer", nullable=true)
+     */
+    private $maisVendido;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cdn", type="integer", nullable=true)
+     */
+    private $idCdn;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DtCadastro", type="datetime", nullable=true)
+     */
+    private $dtcadastro = '0000-00-00 00:00:00';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DtAlteracao", type="datetime", nullable=true)
+     */
+    private $dtalteracao = '0000-00-00 00:00:00';
+
+
+}
+

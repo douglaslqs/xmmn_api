@@ -1,0 +1,61 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblConsultorTipo
+ *
+ * @ORM\Table(name="tbl_consultor_tipo")
+ * @ORM\Entity
+ */
+class TblConsultorTipo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tipoconsultor", type="integer", nullable=true)
+     */
+    private $tipoconsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=30, nullable=true)
+     */
+    private $tipo;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="preco", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $preco;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $ponto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pin", type="string", length=30, nullable=true)
+     */
+    private $pin;
+
+
+}
+

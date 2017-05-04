@@ -1,0 +1,54 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Mptt
+ *
+ * @ORM\Table(name="mptt", indexes={@ORM\Index(name="title", columns={"title"}), @ORM\Index(name="lft", columns={"lft"}), @ORM\Index(name="rgt", columns={"rgt"}), @ORM\Index(name="parent", columns={"parent"})})
+ * @ORM\Entity
+ */
+class Mptt
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=50, nullable=false)
+     */
+    private $title = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lft", type="integer", nullable=false)
+     */
+    private $lft = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rgt", type="integer", nullable=false)
+     */
+    private $rgt = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="parent", type="integer", nullable=false)
+     */
+    private $parent = '0';
+
+
+}
+

@@ -1,0 +1,47 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblConsultorDados
+ *
+ * @ORM\Table(name="tbl_consultor_dados")
+ * @ORM\Entity
+ */
+class TblConsultorDados
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desconto_cotas_esquerda", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $descontoCotasEsquerda = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desconto_cotas_direita", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $descontoCotasDireita = '0.00';
+
+
+}
+

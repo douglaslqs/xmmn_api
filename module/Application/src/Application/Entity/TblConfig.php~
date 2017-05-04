@@ -1,0 +1,47 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblConfig
+ *
+ * @ORM\Table(name="tbl_config")
+ * @ORM\Entity
+ */
+class TblConfig
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="Id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="campo", type="string", length=255, nullable=true)
+     */
+    private $campo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor", type="string", length=255, nullable=true)
+     */
+    private $valor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descricao", type="string", length=255, nullable=true)
+     */
+    private $descricao;
+
+
+}
+

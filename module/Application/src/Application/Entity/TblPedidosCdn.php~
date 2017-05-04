@@ -1,0 +1,257 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblPedidosCdn
+ *
+ * @ORM\Table(name="tbl_pedidos_cdn")
+ * @ORM\Entity
+ */
+class TblPedidosCdn
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPedido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_entrega", type="string", length=20, nullable=false)
+     */
+    private $tipoEntrega = 'PAC';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="endereco", type="string", length=200, nullable=true)
+     */
+    private $endereco;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero", type="integer", nullable=true)
+     */
+    private $numero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bairro", type="string", length=200, nullable=true)
+     */
+    private $bairro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cidade", type="string", length=200, nullable=true)
+     */
+    private $cidade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=200, nullable=true)
+     */
+    private $estado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pais", type="string", length=200, nullable=true)
+     */
+    private $pais;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep", type="string", length=20, nullable=true)
+     */
+    private $cep;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rastreador", type="string", length=100, nullable=false)
+     */
+    private $rastreador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=200, nullable=false)
+     */
+    private $tipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_pagamento", type="string", length=40, nullable=false)
+     */
+    private $tipoPagamento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bandeira", type="string", length=50, nullable=false)
+     */
+    private $bandeira;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     */
+    private $idConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="subtotal", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $subtotal;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $total;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="frete", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $frete;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=50, nullable=false)
+     */
+    private $status = 'NÃO pago';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dt_venc_boleto", type="date", nullable=true)
+     */
+    private $dtVencBoleto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="forma_entrega", type="string", length=255, nullable=true)
+     */
+    private $formaEntrega;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="peso", type="float", precision=5, scale=3, nullable=true)
+     */
+    private $peso = '0.000';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento", type="string", length=255, nullable=true)
+     */
+    private $complemento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ponto_referencia", type="string", length=255, nullable=true)
+     */
+    private $pontoReferencia;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cdn", type="integer", nullable=true)
+     */
+    private $idCdn;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="remessa_boleto", type="integer", nullable=false)
+     */
+    private $remessaBoleto = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_pagamento", type="datetime", nullable=true)
+     */
+    private $dataPagamento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_entrega", type="string", length=200, nullable=true)
+     */
+    private $statusEntrega;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fechamento", type="integer", nullable=true)
+     */
+    private $fechamento = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $ponto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cancelado", type="integer", nullable=true)
+     */
+    private $cancelado = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="upgrade", type="integer", nullable=true)
+     */
+    private $upgrade = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=255, nullable=true)
+     */
+    private $token;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="credito_utilizado", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $creditoUtilizado;
+
+
+}
+

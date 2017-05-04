@@ -1,0 +1,215 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblUpgrade
+ *
+ * @ORM\Table(name="tbl_upgrade", indexes={@ORM\Index(name="in_id_consultor", columns={"id_consultor"}), @ORM\Index(name="in_id_pedido", columns={"id_pedido"})})
+ * @ORM\Entity
+ */
+class TblUpgrade
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     */
+    private $idConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=false)
+     */
+    private $idPedido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pedido_pago_antes_upgrade", type="string", length=1, nullable=true)
+     */
+    private $pedidoPagoAntesUpgrade = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto", type="integer", nullable=true)
+     */
+    private $idProduto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor", type="float", precision=24, scale=2, nullable=true)
+     */
+    private $valor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desconto", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $desconto = '0.00';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="upgrade", type="integer", nullable=false)
+     */
+    private $upgrade;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=20, nullable=false)
+     */
+    private $status = 'NÃO pago';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto_anterior", type="integer", nullable=true)
+     */
+    private $idProdutoAnterior;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_anterior", type="float", precision=24, scale=2, nullable=true)
+     */
+    private $valorAnterior;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_pagamento_anterior", type="datetime", nullable=true)
+     */
+    private $dataPagamentoAnterior;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="frete", type="float", precision=24, scale=2, nullable=true)
+     */
+    private $frete;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="forma_entrega", type="string", length=255, nullable=true)
+     */
+    private $formaEntrega;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="endereco", type="string", length=255, nullable=true)
+     */
+    private $endereco;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero", type="string", length=60, nullable=true)
+     */
+    private $numero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bairro", type="string", length=255, nullable=true)
+     */
+    private $bairro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cidade", type="string", length=255, nullable=true)
+     */
+    private $cidade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=255, nullable=true)
+     */
+    private $estado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pais", type="string", length=255, nullable=true)
+     */
+    private $pais;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep", type="string", length=255, nullable=true)
+     */
+    private $cep;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento", type="string", length=255, nullable=true)
+     */
+    private $complemento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_pagamento", type="string", length=60, nullable=true)
+     */
+    private $tipoPagamento;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cdn", type="integer", nullable=true)
+     */
+    private $idCdn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_entrega", type="string", length=30, nullable=true)
+     */
+    private $tipoEntrega;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cancelado", type="string", length=1, nullable=true)
+     */
+    private $cancelado = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cancelamento", type="datetime", nullable=true)
+     */
+    private $dataCancelamento;
+
+
+}
+

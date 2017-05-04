@@ -1,0 +1,117 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblArvore
+ *
+ * @ORM\Table(name="tbl_arvore", indexes={@ORM\Index(name="id_consultor", columns={"id_consultor"}), @ORM\Index(name="esquerda_consultor", columns={"esquerda_consultor"}), @ORM\Index(name="direita_consultor", columns={"direita_consultor"}), @ORM\Index(name="patrocinador_consultor", columns={"patrocinador_consultor"}), @ORM\Index(name="in_patrocinador_lado", columns={"patrocinador_lado"}), @ORM\Index(name="in_opcao_arvore", columns={"opcao_arvore_consultor"})})
+ * @ORM\Entity
+ */
+class TblArvore
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_arvore", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idArvore;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_esquerda", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosEsquerda;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_direita", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosDireita;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_consultor", type="string", length=100, nullable=true)
+     */
+    private $nomeConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="esquerda_consultor", type="integer", nullable=true)
+     */
+    private $esquerdaConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="direita_consultor", type="integer", nullable=true)
+     */
+    private $direitaConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="patrocinador_consultor", type="integer", nullable=true)
+     */
+    private $patrocinadorConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="opcao_arvore_consultor", type="integer", nullable=true)
+     */
+    private $opcaoArvoreConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_esquerda_historico", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontosEsquerdaHistorico = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_direita_historico", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontosDireitaHistorico = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="patrocinador_lado", type="string", length=1, nullable=true)
+     */
+    private $patrocinadorLado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sem_upline", type="string", length=1, nullable=true)
+     */
+    private $semUpline;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alterado_nova_rede", type="string", length=1, nullable=true)
+     */
+    private $alteradoNovaRede;
+
+
+}
+

@@ -1,0 +1,89 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblPontosSemana
+ *
+ * @ORM\Table(name="tbl_pontos_semana")
+ * @ORM\Entity
+ */
+class TblPontosSemana
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     */
+    private $idConsultor;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="semana_1", type="date", nullable=false)
+     */
+    private $semana1;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="semana_2", type="date", nullable=false)
+     */
+    private $semana2;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="semana_3", type="date", nullable=false)
+     */
+    private $semana3;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="semana_4", type="date", nullable=false)
+     */
+    private $semana4;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_semana_1", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosSemana1;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_semana_2", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosSemana2;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_semana_3", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosSemana3;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontos_semana_4", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $pontosSemana4;
+
+
+}
+

@@ -1,0 +1,68 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblRastreadorCorreios
+ *
+ * @ORM\Table(name="tbl_rastreador_correios")
+ * @ORM\Entity
+ */
+class TblRastreadorCorreios
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo_rastreio", type="string", length=255, nullable=false)
+     */
+    private $codigoRastreio = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=false)
+     */
+    private $idPedido;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_criacao", type="datetime", nullable=false)
+     */
+    private $dataCriacao = 'CURRENT_TIMESTAMP';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descricao", type="text", length=65535, nullable=false)
+     */
+    private $descricao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=false)
+     */
+    private $status = '1';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_registro", type="string", length=20, nullable=true)
+     */
+    private $tipoRegistro;
+
+
+}
+

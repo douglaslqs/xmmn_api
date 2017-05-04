@@ -1,0 +1,257 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblPreFechamento
+ *
+ * @ORM\Table(name="tbl_pre_fechamento", indexes={@ORM\Index(name="in_id_consultor", columns={"id_consultor"}), @ORM\Index(name="in_login_consultor", columns={"login_consultor"}), @ORM\Index(name="in_mes_corrente", columns={"mes_corrente"}), @ORM\Index(name="in_especial", columns={"especial"}), @ORM\Index(name="in_patrocinador", columns={"patrocinador_consultor"}), @ORM\Index(name="in_ciclo", columns={"ciclo_no_mes"})})
+ * @ORM\Entity
+ */
+class TblPreFechamento
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="adesao", type="integer", nullable=true)
+     */
+    private $adesao = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo", type="integer", nullable=true)
+     */
+    private $ativo = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontuacao_pessoal", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontuacaoPessoal;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontuacao_recompra", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontuacaoRecompra;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontuacao_adesao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontuacaoAdesao;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontuacao_ativacao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontuacaoAtivacao;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pontuacao_linha", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontuacaoLinha;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_bronzes", type="integer", nullable=true)
+     */
+    private $quantidadeBronzes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_linhas_bronzes", type="integer", nullable=true)
+     */
+    private $quantidadeLinhasBronzes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_diamantes", type="integer", nullable=true)
+     */
+    private $quantidadeDiamantes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_linhas_diamantes", type="integer", nullable=true)
+     */
+    private $quantidadeLinhasDiamantes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_duplos_diamantes", type="integer", nullable=true)
+     */
+    private $quantidadeDuplosDiamantes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidade_linhas_duplos_diamantes", type="integer", nullable=true)
+     */
+    private $quantidadeLinhasDuplosDiamantes;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="graduacao", type="integer", nullable=true)
+     */
+    private $graduacao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="patrocinador_consultor", type="integer", nullable=true)
+     */
+    private $patrocinadorConsultor;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="ultima_atualizacao", type="datetime", nullable=true)
+     */
+    private $ultimaAtualizacao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login_consultor", type="string", length=255, nullable=true)
+     */
+    private $loginConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mes_corrente", type="string", length=255, nullable=true)
+     */
+    private $mesCorrente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ciclo_no_mes", type="string", length=2, nullable=true)
+     */
+    private $cicloNoMes;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_indicacao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $valorIndicacao;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_ativacao", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $valorAtivacao;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observacao", type="string", length=500, nullable=true)
+     */
+    private $observacao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="especial", type="integer", nullable=true)
+     */
+    private $especial = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="direita", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $direita;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="esquerda", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $esquerda;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_rede", type="float", precision=24, scale=2, nullable=true)
+     */
+    private $bonusRede = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_ecommerce", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusEcommerce = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_lideranca", type="float", precision=24, scale=2, nullable=true)
+     */
+    private $bonusLideranca = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_unilevel", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusUnilevel = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_participacao", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusParticipacao = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_derramamento", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusDerramamento = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pago", type="string", length=1, nullable=true)
+     */
+    private $pago = '0';
+
+
+}
+

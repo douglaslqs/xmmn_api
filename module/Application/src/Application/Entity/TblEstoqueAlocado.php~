@@ -1,0 +1,82 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblEstoqueAlocado
+ *
+ * @ORM\Table(name="tbl_estoque_alocado")
+ * @ORM\Entity
+ */
+class TblEstoqueAlocado
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cdn", type="integer", nullable=true)
+     */
+    private $idCdn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_consultor", type="string", length=255, nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_pedido", type="string", length=255, nullable=true)
+     */
+    private $idPedido;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=true)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo", type="integer", nullable=true)
+     */
+    private $ativo = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto", type="integer", nullable=true)
+     */
+    private $idProduto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=30, nullable=true)
+     */
+    private $status = 'NÃO pago';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observacao", type="string", length=255, nullable=true)
+     */
+    private $observacao;
+
+
+}
+

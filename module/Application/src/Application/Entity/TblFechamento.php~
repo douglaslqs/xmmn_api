@@ -1,0 +1,173 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblFechamento
+ *
+ * @ORM\Table(name="tbl_fechamento", indexes={@ORM\Index(name="in_id_consultor", columns={"id_consultor"}), @ORM\Index(name="in_data", columns={"data"}), @ORM\Index(name="in_status", columns={"status"}), @ORM\Index(name="in_mes_corrente", columns={"mes_corrente"}), @ORM\Index(name="in_ciclo", columns={"ciclo_no_mes"})})
+ * @ORM\Entity
+ */
+class TblFechamento
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=true)
+     */
+    private $data;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="indicacao", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $indicacao = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="derramamento", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $derramamento = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pl", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $pl = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ganho_por_equipe", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $ganhoPorEquipe = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="equiparacao", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $equiparacao = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_rede", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusRede = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_ecommerce", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusEcommerce = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="naopago_fechamento_passado", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $naopagoFechamentoPassado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=255, nullable=true)
+     */
+    private $status = 'NÃO pago';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="credito", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $credito;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="dinheiro", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $dinheiro = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ir", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $ir = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="a_receber", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $aReceber = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mes_corrente", type="string", length=30, nullable=true)
+     */
+    private $mesCorrente;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ciclo_no_mes", type="string", length=2, nullable=true)
+     */
+    private $cicloNoMes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ativo_mes", type="string", length=1, nullable=true)
+     */
+    private $ativoMes = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_unilevel", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusUnilevel = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_lideranca", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusLideranca = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_participacao", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusParticipacao = '0.00';
+
+
+}
+

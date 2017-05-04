@@ -1,0 +1,82 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblNotaFiscal
+ *
+ * @ORM\Table(name="tbl_nota_fiscal")
+ * @ORM\Entity
+ */
+class TblNotaFiscal
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=true)
+     */
+    private $idPedido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="origem_pedido", type="string", length=30, nullable=true)
+     */
+    private $origemPedido = 'escritorio';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_nf", type="string", length=60, nullable=true)
+     */
+    private $numeroNf;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id_nf", type="string", length=60, nullable=true)
+     */
+    private $idNf;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_registro", type="datetime", nullable=true)
+     */
+    private $dataRegistro = 'CURRENT_TIMESTAMP';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cod_erro", type="string", length=30, nullable=true)
+     */
+    private $codErro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="msg_erro", type="string", length=60, nullable=true)
+     */
+    private $msgErro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nf_enviada", type="string", length=1, nullable=true)
+     */
+    private $nfEnviada = '0';
+
+
+}
+

@@ -1,0 +1,222 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblPedidosEcommerce
+ *
+ * @ORM\Table(name="tbl_pedidos_ecommerce")
+ * @ORM\Entity
+ */
+class TblPedidosEcommerce
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_entrega", type="string", length=15, nullable=false)
+     */
+    private $tipoEntrega = 'PAC';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="endereco", type="string", length=200, nullable=false)
+     */
+    private $endereco;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero", type="integer", nullable=false)
+     */
+    private $numero;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bairro", type="string", length=200, nullable=false)
+     */
+    private $bairro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cidade", type="string", length=200, nullable=false)
+     */
+    private $cidade;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado", type="string", length=50, nullable=false)
+     */
+    private $estado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pais", type="string", length=20, nullable=false)
+     */
+    private $pais;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep", type="string", length=20, nullable=false)
+     */
+    private $cep;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rastreador", type="string", length=20, nullable=false)
+     */
+    private $rastreador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=50, nullable=false)
+     */
+    private $tipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_pagamento", type="string", length=50, nullable=false)
+     */
+    private $tipoPagamento;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_cliente", type="integer", nullable=false)
+     */
+    private $idCliente;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="subtotal", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $subtotal;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $total;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="frete", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $frete;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=false)
+     */
+    private $data;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=50, nullable=false)
+     */
+    private $status = 'NÃO Pago';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dt_venc_boleto", type="date", nullable=true)
+     */
+    private $dtVencBoleto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="forma_entrega", type="string", length=255, nullable=true)
+     */
+    private $formaEntrega = 'receber_em_casa';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento", type="string", length=255, nullable=true)
+     */
+    private $complemento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ponto_referencia", type="string", length=255, nullable=true)
+     */
+    private $pontoReferencia;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="remessa_boleto", type="integer", nullable=true)
+     */
+    private $remessaBoleto = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_pagamento", type="date", nullable=true)
+     */
+    private $dataPagamento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status_entrega", type="string", length=255, nullable=true)
+     */
+    private $statusEntrega;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fechamento", type="integer", nullable=true)
+     */
+    private $fechamento = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $ponto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="visualizar", type="integer", nullable=true)
+     */
+    private $visualizar = '1';
+
+
+}
+

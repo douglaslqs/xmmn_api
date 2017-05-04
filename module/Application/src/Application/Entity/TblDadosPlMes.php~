@@ -1,0 +1,82 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblDadosPlMes
+ *
+ * @ORM\Table(name="tbl_dados_pl_mes")
+ * @ORM\Entity
+ */
+class TblDadosPlMes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mes_corrente", type="string", length=60, nullable=true)
+     */
+    private $mesCorrente;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pedidos_mes", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPedidosMes = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pedidos_divisao", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPedidosDivisao = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="acumulado_mes_anterior", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $acumuladoMesAnterior = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="qtd_pl_mes", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $qtdPlMes = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pl_mes", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPlMes = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pl_mes_real", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPlMesReal;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pago_bonus", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPagoBonus = '0.00';
+
+
+}
+

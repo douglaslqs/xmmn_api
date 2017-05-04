@@ -1,0 +1,68 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblItemPedidoEcommerce
+ *
+ * @ORM\Table(name="tbl_item_pedido_ecommerce", indexes={@ORM\Index(name="in_id_pedido_eco", columns={"id_pedido_ecommerce"}), @ORM\Index(name="in_id_produto", columns={"id_produto"})})
+ * @ORM\Entity
+ */
+class TblItemPedidoEcommerce
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido_ecommerce", type="integer", nullable=false)
+     */
+    private $idPedidoEcommerce;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_produto", type="integer", nullable=false)
+     */
+    private $idProduto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="desconto", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $desconto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $valor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $ponto;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=true)
+     */
+    private $data;
+
+
+}
+

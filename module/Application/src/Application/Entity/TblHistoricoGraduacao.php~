@@ -1,0 +1,54 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblHistoricoGraduacao
+ *
+ * @ORM\Table(name="tbl_historico_graduacao")
+ * @ORM\Entity
+ */
+class TblHistoricoGraduacao
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     */
+    private $idConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="patamar_momento", type="integer", nullable=false)
+     */
+    private $patamarMomento;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="patamar_obtido", type="integer", nullable=false)
+     */
+    private $patamarObtido;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=false)
+     */
+    private $data;
+
+
+}
+

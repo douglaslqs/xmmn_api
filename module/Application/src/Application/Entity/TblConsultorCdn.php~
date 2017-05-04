@@ -1,0 +1,285 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblConsultorCdn
+ *
+ * @ORM\Table(name="tbl_consultor_cdn")
+ * @ORM\Entity
+ */
+class TblConsultorCdn
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_loja", type="integer", nullable=true)
+     */
+    private $idLoja;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_admin", type="integer", nullable=false)
+     */
+    private $idAdmin = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome_consultor", type="string", length=100, nullable=true)
+     */
+    private $nomeConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login_consultor", type="string", length=30, nullable=false)
+     */
+    private $loginConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="senha_consultor", type="string", length=255, nullable=false)
+     */
+    private $senhaConsultor = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo_consultor", type="integer", nullable=true)
+     */
+    private $ativoConsultor = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_ativacao", type="date", nullable=false)
+     */
+    private $dataAtivacao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="especial_consultor", type="integer", nullable=false)
+     */
+    private $especialConsultor = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tipo_consultor", type="integer", nullable=false)
+     */
+    private $tipoConsultor = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="fase_consultor", type="integer", nullable=false)
+     */
+    private $faseConsultor = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="patamar_consultor", type="integer", nullable=false)
+     */
+    private $patamarConsultor = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_cadastro_consultor", type="datetime", nullable=false)
+     */
+    private $dataCadastroConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status_consultor", type="integer", nullable=false)
+     */
+    private $statusConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_consultor", type="string", length=255, nullable=false)
+     */
+    private $emailConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefone_consultor", type="string", length=255, nullable=false)
+     */
+    private $telefoneConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="celular_consultor", type="string", length=255, nullable=false)
+     */
+    private $celularConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="banco_consultor", type="string", length=200, nullable=false)
+     */
+    private $bancoConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="agencia_consultor", type="string", length=15, nullable=false)
+     */
+    private $agenciaConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="conta_consultor", type="string", length=15, nullable=false)
+     */
+    private $contaConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexo_consultor", type="string", length=1, nullable=false)
+     */
+    private $sexoConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf_consultor", type="string", length=20, nullable=false)
+     */
+    private $cpfConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="endereco_consultor", type="string", length=100, nullable=false)
+     */
+    private $enderecoConsultor = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="numero_consultor", type="integer", nullable=true)
+     */
+    private $numeroConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cep_consultor", type="string", length=11, nullable=true)
+     */
+    private $cepConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bairro_consultor", type="string", length=100, nullable=false)
+     */
+    private $bairroConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cidade_consultor", type="string", length=50, nullable=false)
+     */
+    private $cidadeConsultor = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estado_consultor", type="string", length=50, nullable=true)
+     */
+    private $estadoConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ganhos_ativacao", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $ganhosAtivacao;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="total_ativos", type="integer", nullable=false)
+     */
+    private $totalAtivos;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="total_credito", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $totalCredito;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="administrador", type="integer", nullable=false)
+     */
+    private $administrador = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="validade", type="date", nullable=false)
+     */
+    private $validade;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bloqueado", type="integer", nullable=false)
+     */
+    private $bloqueado = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="complemento_consultor", type="string", length=255, nullable=true)
+     */
+    private $complementoConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=255, nullable=true)
+     */
+    private $tipo = 'cdn';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="excluido", type="integer", nullable=true)
+     */
+    private $excluido = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comercializa_kit", type="string", length=1, nullable=true)
+     */
+    private $comercializaKit = '0';
+
+
+}
+

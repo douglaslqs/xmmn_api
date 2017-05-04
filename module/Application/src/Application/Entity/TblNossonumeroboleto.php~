@@ -1,0 +1,82 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblNossonumeroboleto
+ *
+ * @ORM\Table(name="tbl_nossonumeroboleto", indexes={@ORM\Index(name="in_id_pedido", columns={"id_pedido"})})
+ * @ORM\Entity
+ */
+class TblNossonumeroboleto
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nos_cod", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $nosCod;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=false)
+     */
+    private $idPedido = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="nos_dtdocumento", type="datetime", nullable=false)
+     */
+    private $nosDtdocumento;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="nos_dtvencimento", type="datetime", nullable=false)
+     */
+    private $nosDtvencimento;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="nos_valor_boleto", type="float", precision=10, scale=4, nullable=false)
+     */
+    private $nosValorBoleto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nos_remessa", type="integer", nullable=true)
+     */
+    private $nosRemessa = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="nos_remessa_data", type="datetime", nullable=false)
+     */
+    private $nosRemessaData;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nos_origem", type="string", length=30, nullable=true)
+     */
+    private $nosOrigem = 'escritorio';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="boleto_upgrade", type="integer", nullable=true)
+     */
+    private $boletoUpgrade = '0';
+
+
+}
+

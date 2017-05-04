@@ -1,0 +1,103 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblConsultorPlMes
+ *
+ * @ORM\Table(name="tbl_consultor_pl_mes", indexes={@ORM\Index(name="id_consultor", columns={"id_consultor"}), @ORM\Index(name="mes_corrente", columns={"mes_corrente"})})
+ * @ORM\Entity
+ */
+class TblConsultorPlMes
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mes_corrente", type="string", length=60, nullable=true)
+     */
+    private $mesCorrente;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dias_mes", type="integer", nullable=true)
+     */
+    private $diasMes = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dias_ativo", type="integer", nullable=true)
+     */
+    private $diasAtivo = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pl_real", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $plReal = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="pl_mes", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $plMes = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_pl", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorPl = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="bonus_mes", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $bonusMes = '0.00';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="binario_ativo", type="string", length=1, nullable=true)
+     */
+    private $binarioAtivo = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_ativacao_binario", type="date", nullable=true)
+     */
+    private $dataAtivacaoBinario = '0000-00-00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="teto_pl", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $tetoPl = '0.00';
+
+
+}
+

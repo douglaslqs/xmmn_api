@@ -1,0 +1,54 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblCategorias
+ *
+ * @ORM\Table(name="tbl_categorias")
+ * @ORM\Entity
+ */
+class TblCategorias
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=200, nullable=false)
+     */
+    private $nome;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo", type="integer", nullable=false)
+     */
+    private $ativo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="excluido", type="integer", nullable=false)
+     */
+    private $excluido = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pai", type="integer", nullable=false)
+     */
+    private $pai = '0';
+
+
+}
+

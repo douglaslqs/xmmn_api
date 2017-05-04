@@ -1,0 +1,229 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblProdutos
+ *
+ * @ORM\Table(name="tbl_produtos", indexes={@ORM\Index(name="in_id_categoria", columns={"id_categoria"})})
+ * @ORM\Entity
+ */
+class TblProdutos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="referencia", type="string", length=255, nullable=true)
+     */
+    private $referencia = '';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_categoria", type="integer", nullable=false)
+     */
+    private $idCategoria;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="estoque", type="integer", nullable=true)
+     */
+    private $estoque;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=200, nullable=true)
+     */
+    private $nome;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marca", type="string", length=100, nullable=true)
+     */
+    private $marca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="resumo", type="text", length=65535, nullable=true)
+     */
+    private $resumo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sobre", type="text", length=65535, nullable=true)
+     */
+    private $sobre;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_loja", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valorLoja = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_custo", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $valorCusto;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $ponto = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto_binario", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $pontoBinario;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="peso", type="float", precision=11, scale=3, nullable=true)
+     */
+    private $peso = '0.000';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="largura", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $largura;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="comprimento", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $comprimento;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="altura", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $altura;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="foto", type="string", length=200, nullable=true)
+     */
+    private $foto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="destaque", type="integer", nullable=true)
+     */
+    private $destaque;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ativo", type="integer", nullable=true)
+     */
+    private $ativo = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="mais_vendido", type="integer", nullable=true)
+     */
+    private $maisVendido;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data", type="datetime", nullable=true)
+     */
+    private $data;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="excluido", type="integer", nullable=true)
+     */
+    private $excluido;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor1", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor1 = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor2", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor2 = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor3", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor3 = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor4", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor4 = '0.00';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor5", type="float", precision=11, scale=2, nullable=true)
+     */
+    private $valor5 = '0.00';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DtAlteracao", type="datetime", nullable=true)
+     */
+    private $dtalteracao;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DtCadastro", type="datetime", nullable=true)
+     */
+    private $dtcadastro;
+
+
+}
+

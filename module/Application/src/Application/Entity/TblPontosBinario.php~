@@ -1,0 +1,103 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblPontosBinario
+ *
+ * @ORM\Table(name="tbl_pontos_binario")
+ * @ORM\Entity
+ */
+class TblPontosBinario
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=true)
+     */
+    private $idConsultor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mes_corrente", type="string", length=255, nullable=true)
+     */
+    private $mesCorrente;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="esquerda", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $esquerda;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="direita", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $direita;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="login_consultor", type="string", length=255, nullable=true)
+     */
+    private $loginConsultor;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="diferenca", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $diferenca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lado_acumulado_errado", type="string", length=1, nullable=true)
+     */
+    private $ladoAcumuladoErrado;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="ponto_acumulado_real", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $pontoAcumuladoReal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lado_acumulado_real", type="string", length=1, nullable=true)
+     */
+    private $ladoAcumuladoReal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lado_pagamento", type="string", length=3, nullable=true)
+     */
+    private $ladoPagamento;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_ultima_atualizacao", type="datetime", nullable=true)
+     */
+    private $dataUltimaAtualizacao = 'CURRENT_TIMESTAMP';
+
+
+}
+

@@ -1,0 +1,61 @@
+<?php
+
+namespace Application\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TblAdesaoBoleto
+ *
+ * @ORM\Table(name="tbl_adesao_boleto")
+ * @ORM\Entity
+ */
+class TblAdesaoBoleto
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_consultor", type="integer", nullable=false)
+     */
+    private $idConsultor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pedido", type="integer", nullable=false)
+     */
+    private $idPedido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rastreador", type="string", length=40, nullable=false)
+     */
+    private $rastreador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=40, nullable=false)
+     */
+    private $status = 'NÃO Pago';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_insercao", type="datetime", nullable=false)
+     */
+    private $dataInsercao;
+
+
+}
+
